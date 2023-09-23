@@ -1,0 +1,2 @@
+# examples-ngrx-auto-file
+ 
