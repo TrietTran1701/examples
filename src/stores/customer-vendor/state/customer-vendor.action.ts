@@ -2,10 +2,11 @@ import { Action } from "@ngrx/store"
 import { ErrorModel } from "src/app/core/models/error.model"
 import { ImportExcelReq } from "src/app/core/models/import-excel.req"
 import { PagingResponse } from "src/app/core/models/paging.res"
-import { CustomerVendorSearchReq } from "./models/request/customer-vendor-search.req"
-import { CustomerVendorUpdateReq } from "./models/request/customer-vendor-update.req"
-import { CustomerVendorSearchRes } from "./models/response/customer-vendor-search.res"
-import { CustomerVendorRes } from "./models/response/customer-vendor.res"
+import { CustomerVendorSearchReq } from "../models/request/customer-vendor-search.req"
+import { CustomerVendorUpdateReq } from "../models/request/customer-vendor-update.req"
+import { CustomerVendorCreateReq } from "../models/request/customer-vendor-create.req"
+import { CustomerVendorSearchRes } from "../models/response/customer-vendor-search.res"
+import { CustomerVendorRes } from "../models/response/customer-vendor.res"
 
 export const STORE_ACTION = {
   SEARCH_CUSTOMER_VENDOR: "[CUSTOMER_VENDOR] SEARCH_CUSTOMER_VENDOR",
@@ -15,6 +16,10 @@ export const STORE_ACTION = {
   READ_BY_ID_CUSTOMER_VENDOR: "[CUSTOMER_VENDOR] READ_BY_ID_CUSTOMER_VENDOR",
   READ_BY_ID_CUSTOMER_VENDOR_ERROR: "[CUSTOMER_VENDOR] READ_BY_ID_CUSTOMER_VENDOR_ERROR",
   READ_BY_ID_CUSTOMER_VENDOR_SUCCESS: "[CUSTOMER_VENDOR] READ_BY_ID_CUSTOMER_VENDOR_SUCCESS",
+
+  CREATE_CUSTOMER_VENDOR: "[CUSTOMER_VENDOR] CREATE_CUSTOMER_VENDOR",
+  CREATE_CUSTOMER_VENDOR_ERROR: "[CUSTOMER_VENDOR] CREATE_CUSTOMER_VENDOR_ERROR",
+  CREATE_CUSTOMER_VENDOR_SUCCESS: "[CUSTOMER_VENDOR] CREATE_CUSTOMER_VENDOR_SUCCESS",
 
   UPDATE_CUSTOMER_VENDOR: "[CUSTOMER_VENDOR] UPDATE_CUSTOMER_VENDOR",
   UPDATE_CUSTOMER_VENDOR_ERROR: "[CUSTOMER_VENDOR] UPDATE_CUSTOMER_VENDOR_ERROR",
@@ -26,11 +31,6 @@ export const STORE_ACTION = {
     "[CUSTOMER_VENDOR] EXPORT_EXCEL_TEMPLATE_CUSTOMER_VENDORERROR",
   EXPORT_EXCEL_TEMPLATE_CUSTOMER_VENDOR_SUCCESS:
     "[CUSTOMER_VENDOR] EXPORT_EXCEL_TEMPLATE_CUSTOMER_VENDORSUCCESS",
-
-  IMPORT_UPDATE_CUSTOMER_VENDOR: "[CUSTOMER_VENDOR] IMPORT_UPDATE_CUSTOMER_VENDOR",
-  IMPORT_UPDATE_CUSTOMER_VENDOR_ERROR: "[CUSTOMER_VENDOR] IMPORT_UPDATE_CUSTOMER_VENDOR_ERROR",
-  IMPORT_UPDATE_CUSTOMER_VENDOR_SUCCESS:
-    "[CUSTOMER_VENDOR] IMPORT_UPDATE_CUSTOMER_VENDOR_SUCCESS",
 }
 
 //#region SEARCH_CustomerVendor
@@ -63,6 +63,21 @@ export class ReadByIDCustomerVendorActionError implements Action {
 }
 //#endregion READ_BY_ID
 
+//#region CREATE
+export class CreateCustomerVendorAction implements Action {
+  readonly type = STORE_ACTION.CREATE_CUSTOMER_VENDOR
+  constructor(public payload: CustomerVendorCreateReq) {}
+}
+export class CreateCustomerVendorActionSuccess implements Action {
+  readonly type = STORE_ACTION.CREATE_CUSTOMER_VENDOR_SUCCESS
+  constructor(public payload: Boolean) {}
+}
+export class CreateCustomerVendorActionError implements Action {
+  readonly type = STORE_ACTION.CREATE_CUSTOMER_VENDOR_ERROR
+  constructor(public payload: ErrorModel) {}
+}
+//#endregion CREATE
+
 //#region UPDATE
 export class UpdateCustomerVendorAction implements Action {
   readonly type = STORE_ACTION.UPDATE_CUSTOMER_VENDOR
@@ -93,21 +108,6 @@ export class ExportExcelTemplateCustomerVendorActionError implements Action {
 }
 //#endregion EXPORT_EXCEL_TEMPLATE
 
-//#region IMPORT_UPDATE_CustomerVendor
-export class ImportUpdateCustomerVendorAction implements Action {
-  readonly type = STORE_ACTION.IMPORT_UPDATE_CUSTOMER_VENDOR
-  constructor(public payload: ImportExcelReq) {}
-}
-export class ImportUpdateCustomerVendorActionSuccess implements Action {
-  readonly type = STORE_ACTION.IMPORT_UPDATE_CUSTOMER_VENDOR_SUCCESS
-  constructor(public payload: boolean) {}
-}
-export class ImportUpdateCustomerVendorActionError implements Action {
-  readonly type = STORE_ACTION.IMPORT_UPDATE_CUSTOMER_VENDOR_ERROR
-  constructor(public payload: ErrorModel) {}
-}
-//#endregion IMPORT_UPDATE_CustomerVendor
-
 export type Actions =
   | SearchCustomerVendorAction
   | SearchCustomerVendorActionSuccess
@@ -115,12 +115,12 @@ export type Actions =
   | ReadByIDCustomerVendorAction
   | ReadByIDCustomerVendorActionSuccess
   | ReadByIDCustomerVendorActionError
+  | CreateCustomerVendorAction
+  | CreateCustomerVendorActionSuccess
+  | CreateCustomerVendorActionError
   | UpdateCustomerVendorAction
   | UpdateCustomerVendorActionSuccess
   | UpdateCustomerVendorActionError
   | ExportExcelTemplateCustomerVendorAction
   | ExportExcelTemplateCustomerVendorActionSuccess
   | ExportExcelTemplateCustomerVendorActionError
-  | ImportUpdateCustomerVendorAction
-  | ImportUpdateCustomerVendorActionSuccess
-  | ImportUpdateCustomerVendorActionError

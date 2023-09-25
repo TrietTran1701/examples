@@ -21,6 +21,11 @@ generateTemplateFiles([
         slot: "__action__",
         replaceWith: (userInput) => userInput.toUpperCase(),
       },
+      {
+        question: "Insert state name",
+        slot: "__state__",
+        replaceWith: (userInput) => userInput.toUpperCase(),
+      },
     ],
     output: {
       path: "./src/stores/__name__(kebabCase)",
