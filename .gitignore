@@ -1,2 +1,2 @@
-./node_modules
-./src/stores
+node_modules/
+src/stores
