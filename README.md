@@ -7,7 +7,7 @@
 
 ## Creating Ngrx Store example
 
-✔ Replace **name** with · CustomerVendor
-✔ Insert model name · CustomerVendor
-✔ Insert action name · CUSTOMER_VENDOR
-✔ Insert state name › customerVender
+1. Replace **name** with · CustomerVendor
+2. Insert model name · CustomerVendor
+3. Insert action name · CUSTOMER_VENDOR
+4. Insert state name › customerVender
