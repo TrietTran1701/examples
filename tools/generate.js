@@ -4,7 +4,7 @@ const config = require("../package.json")
 generateTemplateFiles([
   {
     option: "Create Ngrx Store",
-    defaultCase: "(pascalCase)",
+    defaultCase: "(upperCase)",
     entry: {
       folderPath: "./tools/templates/angular/ngrx-store/",
     },
@@ -14,6 +14,11 @@ generateTemplateFiles([
       {
         question: "Insert model name",
         slot: "__model__",
+        replaceWith: (userInput) => userInput.toUpperCase(),
+      },
+      {
+        question: "Insert action name",
+        slot: "__action__",
         replaceWith: (userInput) => userInput.toUpperCase(),
       },
     ],
