@@ -10,4 +10,4 @@
 1. Replace **name** with · CustomerVendor
 2. Insert model name · CustomerVendor
 3. Insert action name · CUSTOMER_VENDOR
-4. Insert state name › customerVender
+4. Insert state name › customerVendor
