@@ -10,6 +10,17 @@ export function reducer(
   action: AppAction
 ): I__name__State {
   switch (action.type) {
+    // #region CLEAR_ACTION___action__
+    case STORE_ACTION.CLEAR_ACTION___action__:
+      return {
+        ...state,
+        action: STORE_ACTION.CLEAR_ACTION___action__,
+        done: false,
+        error: null,
+        selected: null,
+      }
+    // #endregion CLEAR_ACTION___action__
+
     // #region SEARCH___action__
     case STORE_ACTION.SEARCH___action__:
       return {

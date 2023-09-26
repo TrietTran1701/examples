@@ -9,6 +9,8 @@ import { __model__SearchRes } from "../models/response/__model__(kebabCase)-sear
 import { __model__Res } from "../models/response/__model__(kebabCase).res"
 
 export const STORE_ACTION = {
+  CLEAR_ACTION___action__: "[__action__] CLEAR_ACTION___action__",
+
   SEARCH___action__: "[__action__] SEARCH___action__",
   SEARCH___action___ERROR: "[__action__] SEARCH___action___ERROR",
   SEARCH___action___SUCCESS: "[__action__] SEARCH___action___SUCCESS",
@@ -32,6 +34,13 @@ export const STORE_ACTION = {
   EXPORT_EXCEL_TEMPLATE___action___SUCCESS:
     "[__action__] EXPORT_EXCEL_TEMPLATE___action__SUCCESS",
 }
+
+//#region CLEAR_ACTION___model__
+export class ClearAction__name__Action implements Action {
+  readonly type = STORE_ACTION.CLEAR_ACTION___action__
+  constructor() {}
+}
+//#endregion CLEAR_ACTION___model__
 
 //#region SEARCH___model__
 export class Search__name__Action implements Action {

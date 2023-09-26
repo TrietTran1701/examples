@@ -1,0 +1,5 @@
+export * from "./state/__name__(kebabCase).action"
+export * from "./state/__name__(kebabCase).reducer"
+export * from "./state/__name__(kebabCase).selector"
+export * from "./state/__name__(kebabCase).effect"
+export * from "./__name__(kebabCase).service"
