@@ -2,6 +2,30 @@ import { createSelector } from "@ngrx/store"
 import { STORE_ACTION } from "./__name__(kebabCase).action"
 import { I__name__State, get__name__State } from "./__name__(kebabCase).state"
 
+// #region GET_ALL___action__
+export const getAll__name__Success = createSelector(
+  get__name__State,
+  (state: I__name__State) => {
+    if (
+      state.action === STORE_ACTION.GET_ALL___action__ &&
+      state.done &&
+      !state.error
+    ) {
+      return state.data
+    } else {
+      return null
+    }
+  }
+)
+
+export const getAll__name__Error = createSelector(
+  get__name__State,
+  (state: I__name__State) => {
+    return state.action === STORE_ACTION.GET_ALL___action__ ? state.error : null
+  }
+)
+// #endregion GET_ALL___action__
+
 // #region SEARCH___action__
 export const search__name__Success = createSelector(
   get__name__State,

@@ -13,6 +13,25 @@ import { __model__CreateReq } from "../models/request/__model__(kebabCase)-creat
 export class __name__Effect {
   constructor(private actions$: Actions, private _service: __name__Service) {}
 
+  // #region GET_ALL___action__
+  getAll__name__$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(myActions.STORE_ACTION.GET_ALL___action__), // Update to your renamed action
+      //map((action: myActions.GetAllSubsidiary) => action.payload),
+      switchMap(() =>
+        this._service.getAll().pipe(
+          map((response) => {
+            return new myActions.GetAll__name__ActionSuccess(response) // Update to your renamed action
+          }),
+          catchError((err) => {
+            return [new myActions.GetAll__name__ActionError(err)] // Update to your renamed action
+          })
+        )
+      )
+    )
+  )
+  // #endregion GET_ALL___action__
+
   // #region SEARCH___action__
   search__name__$ = createEffect(() =>
     this.actions$.pipe(

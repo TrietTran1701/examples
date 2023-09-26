@@ -10,6 +10,33 @@ export function reducer(
   action: AppAction
 ): I__name__State {
   switch (action.type) {
+    // #region GET_ALL___action__
+    case STORE_ACTION.GET_ALL___action__:
+      return {
+        ...state,
+        action: STORE_ACTION.GET_ALL___action__,
+        done: true,
+        error: null,
+        selected: null,
+      }
+    case STORE_ACTION.GET_ALL___action___SUCCESS:
+      return {
+        ...state,
+        data: action.payload,
+        done: true,
+        error: null,
+        selected: null,
+      }
+
+    case STORE_ACTION.GET_ALL___action___ERROR:
+      return {
+        ...state,
+        done: true,
+        error: action.payload,
+        selected: null,
+      }
+    // #endregion GET_ALL___action__
+
     // #region CLEAR_ACTION___action__
     case STORE_ACTION.CLEAR_ACTION___action__:
       return {

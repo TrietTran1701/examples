@@ -11,6 +11,10 @@ import { __model__Res } from "../models/response/__model__(kebabCase).res"
 export const STORE_ACTION = {
   CLEAR_ACTION___action__: "[__action__] CLEAR_ACTION___action__",
 
+  GET_ALL___action__: "[__action__] GET_ALL___action__",
+  GET_ALL___action___ERROR: "[__action__] GET_ALL___action___ERROR",
+  GET_ALL___action___SUCCESS: "[__action__] GET_ALL___action___SUCCESS",
+
   SEARCH___action__: "[__action__] SEARCH___action__",
   SEARCH___action___ERROR: "[__action__] SEARCH___action___ERROR",
   SEARCH___action___SUCCESS: "[__action__] SEARCH___action___SUCCESS",
@@ -34,6 +38,21 @@ export const STORE_ACTION = {
   EXPORT_EXCEL_TEMPLATE___action___SUCCESS:
     "[__action__] EXPORT_EXCEL_TEMPLATE___action__SUCCESS",
 }
+
+//#region GET_ALL___action__
+export class GetAll__name__Action implements Action {
+  readonly type = STORE_ACTION.GET_ALL___action__
+  constructor() {}
+}
+export class GetAll__name__ActionSuccess implements Action {
+  readonly type = STORE_ACTION.GET_ALL___action___SUCCESS
+  constructor(public payload: __model__Res[]) {}
+}
+export class GetAll__name__ActionError implements Action {
+  readonly type = STORE_ACTION.GET_ALL___action___ERROR
+  constructor(public payload: ErrorModel) {}
+}
+//#endregion GET_ALL___action__
 
 //#region CLEAR_ACTION___model__
 export class ClearAction__name__Action implements Action {

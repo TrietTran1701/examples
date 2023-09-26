@@ -15,6 +15,9 @@ export class __name__Service {
   constructor(private apiHelper: ApiHelper) {}
   baseUrl = URL_CONSTANTS.__state__
 
+  public getAll(): Observable<__model__Res[]> {
+    return this.apiHelper.get<__model__Res[]>(`${this.baseUrl}`)
+  }
   public readByID(id: number): Observable<__model__Res> {
     return this.apiHelper.get<__model__Res>(`${this.baseUrl}/${id}`)
   }
