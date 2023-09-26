@@ -43,21 +43,11 @@ generateTemplateFiles([
     stringReplacers: [
       "__name__",
       // { question: "Insert model name", slot: "__model__" },
-      {
-        question: "Insert model name",
-        slot: "__model__",
-        replaceWith: (userInput) => userInput.toUpperCase(),
-      },
-      {
-        question: "Insert action name",
-        slot: "__action__",
-        replaceWith: (userInput) => userInput.toUpperCase(),
-      },
-      {
-        question: "Insert state name",
-        slot: "__state__",
-        replaceWith: (userInput) => userInput.toUpperCase(),
-      },
+      // {
+      //   question: "Insert state name",
+      //   slot: "__state__",
+      //   replaceWith: (userInput) => userInput.toUpperCase(),
+      // },
     ],
     output: {
       path: "./src/crud/__name__(kebabCase)",
