@@ -6,6 +6,7 @@ import { PagingResponse } from "src/app/core/models/paging.res"
 import { ImportExcelReq } from "src/app/core/models/import-excel.req"
 
 import { __model__SearchReq } from "./models/request/__model__(kebabCase)-search.req"
+import { __model__SearchRes } from "./models/response/__model__(kebabCase)-search.res"
 import { __model__Res } from "./models/response/__model__(kebabCase).res"
 import { __model__UpdateReq } from "./models/request/__model__(kebabCase)-update.req"
 import { __model__CreateReq } from "./models/request/__model__(kebabCase)-create.req"
@@ -23,8 +24,8 @@ export class __name__Service {
   }
   public search(
     objReq: __model__SearchReq
-  ): Observable<PagingResponse<__model__SearchReq>> {
-    return this.apiHelper.post<PagingResponse<__model__SearchReq>>(
+  ): Observable<PagingResponse<__model__SearchRes>> {
+    return this.apiHelper.post<PagingResponse<__model__SearchRes>>(
       `${this.baseUrl}/search`,
       objReq
     )
