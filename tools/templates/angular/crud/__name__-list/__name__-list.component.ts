@@ -46,7 +46,7 @@ import { ErrorModel } from "src/app/core/models/error.model"
 })
 export class __name__ListComponent
   extends UnsubscribeOnDestroyAdapter
-  implements OnInit
+  implements OnInit, OnDestroy
 {
   // Variables
   private destroy$ = new Subject<void>()

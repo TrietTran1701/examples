@@ -57,7 +57,7 @@ export function reducer(
         error: null,
         selected: null,
       }
-    case STORE_ACTION.SEARCH___action___ERROR:
+    case STORE_ACTION.SEARCH___action___SUCCESS:
       return {
         ...state,
         data: action.payload,
@@ -66,7 +66,7 @@ export function reducer(
         selected: null,
       }
 
-    case STORE_ACTION.SEARCH___action___SUCCESS:
+    case STORE_ACTION.SEARCH___action___ERROR:
       return {
         ...state,
         done: true,
