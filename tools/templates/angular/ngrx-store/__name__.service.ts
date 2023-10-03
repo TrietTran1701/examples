@@ -31,7 +31,7 @@ export class __name__Service {
     )
   }
   public create(objReq: __model__CreateReq): Observable<boolean> {
-    return this.apiHelper.put<boolean>(`${this.baseUrl}/create`, objReq)
+    return this.apiHelper.post<boolean>(`${this.baseUrl}/create`, objReq)
   }
   public update(objReq: __model__UpdateReq): Observable<boolean> {
     return this.apiHelper.put<boolean>(`${this.baseUrl}/update`, objReq)
